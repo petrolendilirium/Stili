@@ -1,0 +1,36 @@
+        Scanner scanner = new Scanner(System.in);
+
+        double wantedIncome = Double.parseDouble(scanner.nextLine());
+        double incomeNeeded = wantedIncome;
+        double income = 0;
+
+        String cocktail = scanner.nextLine();
+
+        while (!cocktail.equals("Party!")){
+
+            double price = Double.parseDouble(scanner.nextLine());
+
+            int cocktailLength = cocktail.length();
+            price = price * cocktailLength;
+            if (price % 2 != 0){
+                price = price - price * 0.25;
+            }
+
+            incomeNeeded = incomeNeeded - price;
+            income = income + price;
+
+            if (incomeNeeded <= 0){
+                break;
+            }
+
+            cocktail = scanner.nextLine();
+
+        }
+
+        if (incomeNeeded > 0){
+            System.out.printf("We need %.2f leva more.", incomeNeeded);
+        } else {
+            System.out.println("Target acquired.");
+        }
+
+        System.out.printf("Club income - %.2f leva.", income);
