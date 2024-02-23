@@ -1,0 +1,14 @@
+        Scanner scanner = new Scanner(System.in);
+        
+        int peopleCnt = Integer.parseInt(scanner.nextLine());
+        double entranceFee = Double.parseDouble(scanner.nextLine());
+        double chairFee = Double.parseDouble(scanner.nextLine());
+        double umbrellaFee = Double.parseDouble(scanner.nextLine());
+
+        double allUmbrellas = umbrellaFee * Math.ceil((double) peopleCnt / 2);
+        double allChairs = chairFee * Math.ceil(peopleCnt * 0.75);
+
+
+        double allTogether = entranceFee * peopleCnt + allChairs + allUmbrellas;
+
+        System.out.printf("%.2f lv.", allTogether);
