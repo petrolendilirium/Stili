@@ -1,0 +1,26 @@
+        Scanner scanner = new Scanner(System.in);
+        
+        double litreFuel = 2.10;
+        double tourGuide = 100;
+
+        double budget = Double.parseDouble(scanner.nextLine());
+        double litresNeeded = Double.parseDouble(scanner.nextLine());
+        String day = scanner.nextLine();
+
+        String saturday = "Saturday";
+
+        double cost = litresNeeded * litreFuel + tourGuide;
+
+        if (day.equals(saturday)) {
+            cost = cost - cost * 0.1;
+        } else {
+            cost = cost - cost * 0.2;
+        }
+
+        if (budget >= cost) {
+            double moneyLeft = budget - cost;
+            System.out.printf("Safari time! Money left: %.2f", moneyLeft);
+        } else {
+            double moneyNeeded = cost - budget;
+            System.out.printf("Not enough money! Money needed: %.2f", moneyNeeded);
+        }
