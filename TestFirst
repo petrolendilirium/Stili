@@ -1,0 +1,18 @@
+
+        Scanner scanner = new Scanner(System.in);
+
+        int pages = 899;
+        int covers = 2;
+
+        double pagePrice = Double.parseDouble(scanner.nextLine());
+        double coverPrice = Double.parseDouble(scanner.nextLine());
+        int paperDiscount = Integer.parseInt(scanner.nextLine());
+        double designPrice = Double.parseDouble(scanner.nextLine());
+        int teamPaymentPrt = Integer.parseInt(scanner.nextLine());
+
+        double priceForPaper = pages * pagePrice + covers * coverPrice;
+        priceForPaper = priceForPaper - priceForPaper * 0.01 * paperDiscount;
+        double bookPrice = priceForPaper + designPrice;
+        bookPrice = bookPrice - bookPrice * 0.01 * teamPaymentPrt;
+
+        System.out.printf("Avtonom should pay %.2f BGN.", bookPrice);
