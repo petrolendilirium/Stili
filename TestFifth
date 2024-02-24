@@ -1,0 +1,30 @@
+        Scanner scanner = new Scanner(System.in);
+
+        int toyPrice = 5;
+        int sweaterPrice = 15;
+        int numKids = 0;
+        int numAdults = 0;
+        int age = 0;
+
+        String input = scanner.nextLine();
+
+        while (!input.equals("Christmas")){
+            age = Integer.parseInt(input);
+
+            if (age <= 16){
+                numKids++;
+            } else {
+                numAdults++;
+            }
+
+            input = scanner.nextLine();
+        }
+
+        System.out.printf("Number of adults: %d\n", numAdults);
+        System.out.printf("Number of kids: %d\n", numKids);
+
+        int toysMoney = toyPrice * numKids;
+        int sweatersMoney = sweaterPrice * numAdults;
+
+        System.out.printf("Money for toys: %d\n", toysMoney);
+        System.out.printf("Money for sweaters: %d", sweatersMoney);
